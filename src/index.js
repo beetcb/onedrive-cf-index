@@ -83,7 +83,7 @@ async function handleRequest(request) {
   let url =
     `https://${oneDriveApiEndpoint}/v1.0/me/drive/root${wrapPathName(neoPathname, isRequestFolder)}` +
     (isRequestFolder && config.pagination.enable && config.pagination.top ? `?$top=${config.pagination.top}` : ``)
-
+  console.log(url)
   // get & set {pLink ,pIdx} for fetching and paging
   const paginationLink = request.headers.get('pLink')
   const paginationIdx = request.headers.get('pIdx') - 0
